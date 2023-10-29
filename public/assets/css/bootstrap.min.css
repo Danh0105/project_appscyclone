@@ -3415,7 +3415,6 @@ input[type=search] {
 .radio {
     position: relative;
     display: block;
-    margin-top: 10px;
     margin-bottom: 10px
 }
 

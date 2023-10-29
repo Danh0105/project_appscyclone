@@ -12,7 +12,7 @@
 					<input class="input-email" id="" name="email" type="text" value="{{ $email }}">
 					<i class="glyphicon glyphicon-pencil"></i>
 				</div>
-				<div class="text-danger disable m-3" id="email"></div>
+				<div class="text-danger m-3" id="email"></div>
 				<label class="col-md-2 control-label">Mời nhập mã</label>
 				<input class="input input-verification" id="input1" type="text" pattern="[0-9]{1}" maxlength="1">
 				<input class="input input-verification" id="input2" type="text" pattern="[0-9]{1}" maxlength="1">
@@ -32,7 +32,7 @@
 						<a href="https://www.google.com/intl/en/policies/terms/" target="_blank">Terms</a>
 					</div>
 				</div>
-				<div class="text-danger disable m-3" id="captcha"></div>
+				<div class="text-danger m-3" id="captcha"></div>
 				<div class="verification-alert varification-alert-danger" id="alert" role="alert">
 					Mã xác thực không đúng!
 				</div>
@@ -101,7 +101,6 @@
 					value5 == arr[4] &&
 					value6 == arr[5]
 				) {
-					console.log(1);
 					window.location.href = "{{ route("verified", ["email" => $email]) }}";
 
 				} else {
@@ -123,25 +122,7 @@
 						alert.style.display = 'none';
 					}, 2000);
 				}
-			}
 
-
-			function helper(arr) {
-				const inputs = document.querySelectorAll('.input');
-				inputs.forEach((input, index) => {
-					input.addEventListener('input', (event) => {
-						const currentValue = event.target.value;
-						if (currentValue) {
-							if (index < inputs.length - 1) {
-								inputs[index + 1].focus();
-							} else {
-								if (arr !== '' || timeLeft === 0)
-									verification(arr);
-							}
-						}
-					});
-
-				});
 			}
 
 			$(document).ready(function() {
@@ -156,28 +137,23 @@
 						data: formData,
 						success: function(response) {
 							if (response) {
-								console.log(response);
+
 								if (response.gRecaptchaErrors || response.errorEmail) {
-									document.getElementById("captcha").classList.remove(
-										"disable");
+
 									document.getElementById("captcha").innerHTML = response
 										.gRecaptchaErrors;
-									document.getElementById("email").classList.remove(
-										"disable");
+
 									document.getElementById("email").innerHTML = response
 										.errorEmail;
 								} else {
 									arr = '';
-									0
 									timeLeft = 60;
-									helper(response.randomNumbers);
+									arr = response.randomNumbers;
 									alert('Mã mới đang được gữi');
 								}
 							}
 						},
-						error: function(error) {
-							console.error("Error occurred:", error);
-						}
+
 					});
 				});
 				$('#showdButton').click(function() {

@@ -81,13 +81,15 @@ class AuthController extends Controller
 
             if (Auth::attempt($input)) {
 
-                /*  $authHandler = new AuthHandler;
-            $token = $authHandler->GenerateToken($user);
+                /*  $authHandler = new AuthHandler; */
+                /*  $token = $authHandler->GenerateToken($user); */
 
-            $success = ['user' => $user, 'token' => $token];
+                /* $success = ['user' => $user, 'token' => $token]; */
 
-            session(['jwt_token' => $token]); */
-                return redirect()->route('home');
+                /*  cookie(
+                    ['token_jwt' => 'dwadawdawdawdawdw']
+                ); */
+                return redirect()->route('dashboard.index');
                 /*  return response()->json($token = session('jwt_token')); */
                 /*  return $this->sendResponse($success, 'Logged In');*/
             } else {
@@ -144,6 +146,7 @@ class AuthController extends Controller
 
     public function reVerification(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
             'email' => 'required|axist_email',
             'g-recaptcha-response' => 'required',
@@ -165,25 +168,25 @@ class AuthController extends Controller
 
             $email = $error->get('email');
 
-            return response()->json(['gRecaptchaErrors' => $gRecaptchaErrors, 'errorEmail' => $email], 422);
+            return response()->json(['gRecaptchaErrors' => $gRecaptchaErrors, 'errorEmail' => $email]);
         }
-        $email = $request->input('email');
 
+        $email['email'] = $request->input('email');
+        $email['name'] = $request->input('name');
         for ($i = 0; $i < 6; $i++) {
 
             $randomNumbers[] = rand(0, 9);
         }
+
         dispatch(function ()  use ($email, $randomNumbers) {
-
             $mail = new MailVerification($email, $randomNumbers);
-
             ProcessMail::dispatch($mail);
         })->afterResponse();
 
         return response()->json(['randomNumbers' => $randomNumbers, 'email' => $email], 200);
     }
 
-    /* public function sendResponse($data, $message, $status = 200)
+    public function sendResponse($data, $message, $status = 200)
     {
         $response = [
             'data' => $data,
@@ -192,7 +195,7 @@ class AuthController extends Controller
 
         return response()->json($response, $status);
     }
-
+    /* 
     public function sendError($message, $errorData = [], $status = 400)
     {
         $response = [

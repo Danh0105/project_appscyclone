@@ -14,7 +14,7 @@ Route::get('/login', function () {
 
     if (Auth::id()) {
 
-        return redirect()->route('home');
+        return redirect()->route('dashboard.index');
     }
     return view('Admin.Auth.Login');
 })->name('login');

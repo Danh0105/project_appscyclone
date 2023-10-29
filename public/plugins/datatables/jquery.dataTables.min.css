@@ -22,6 +22,7 @@ div.dataTables_filter label {
 div.dataTables_filter input {
 	margin-left: 0.5em;
 	display: inline-block;
+	text-align: right;
 }
 
 div.dataTables_info {
@@ -41,6 +42,7 @@ div.dataTables_paginate ul.pagination {
 }
 
 @media screen and (max-width: 767px) {
+
 	div.dataTables_length,
 	div.dataTables_filter,
 	div.dataTables_info,
@@ -84,15 +86,21 @@ table.dataTable thead .sorting_desc:after {
 	font-family: 'Glyphicons Halflings';
 	opacity: 0.5;
 }
+
 table.dataTable thead .sorting:after {
 	opacity: 0.2;
-	content: "\e150"; /* sort */
+	content: "\e150";
+	/* sort */
 }
+
 table.dataTable thead .sorting_asc:after {
-	content: "\e155"; /* sort-by-attributes */
+	content: "\e155";
+	/* sort-by-attributes */
 }
+
 table.dataTable thead .sorting_desc:after {
-	content: "\e156"; /* sort-by-attributes-alt */
+	content: "\e156";
+	/* sort-by-attributes-alt */
 }
 
 table.dataTable thead .sorting_asc_disabled:after,
@@ -100,7 +108,7 @@ table.dataTable thead .sorting_desc_disabled:after {
 	color: #eee;
 }
 
-table.dataTable thead > tr > th {
+table.dataTable thead>tr>th {
 	padding-left: 8px;
 	padding-right: 30px;
 }
@@ -145,20 +153,24 @@ div.dataTables_scrollFoot table {
 table.table-bordered.dataTable {
 	border-collapse: separate !important;
 }
+
 table.table-bordered thead th,
 table.table-bordered thead td {
 	border-left-width: 0;
 	border-top-width: 0;
 }
+
 table.table-bordered tbody th,
 table.table-bordered tbody td {
 	border-left-width: 0;
 	border-bottom-width: 0;
 }
+
 table.table-bordered th:last-child,
 table.table-bordered td:last-child {
 	border-right-width: 0;
 }
+
 div.dataTables_scrollHead table.table-bordered {
 	border-bottom-width: 0;
 }
@@ -180,8 +192,8 @@ div.dataTables_scrollHead table.table-bordered {
 	background-color: #0075b0 !important;
 }
 
-.table.dataTable tbody tr.active th > a,
-.table.dataTable tbody tr.active td > a {
+.table.dataTable tbody tr.active th>a,
+.table.dataTable tbody tr.active td>a {
 	color: white;
 }
 
@@ -199,11 +211,12 @@ div.DTTT .btn:hover {
 }
 
 ul.DTTT_dropdown.dropdown-menu {
-  z-index: 2003;
+	z-index: 2003;
 }
 
 ul.DTTT_dropdown.dropdown-menu a {
-	color: #333 !important; /* needed only when demo_page.css is included */
+	color: #333 !important;
+	/* needed only when demo_page.css is included */
 }
 
 ul.DTTT_dropdown.dropdown-menu li {
@@ -216,7 +229,7 @@ ul.DTTT_dropdown.dropdown-menu li:hover a {
 }
 
 div.DTTT_collection_background {
-	z-index: 2002;	
+	z-index: 2002;
 }
 
 /* TableTools information display */
@@ -236,9 +249,9 @@ div.DTTT_print_info {
 	background-color: white;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	border-radius: 6px;
-	
+
 	-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
-	        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
 }
 
 div.DTTT_print_info h6 {
@@ -254,24 +267,24 @@ div.DTTT_print_info p {
 }
 
 div.dataTables_processing {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 60px;
-    margin-left: -50%;
-    margin-top: -25px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-    font-size: 1.2em;
-    background-color: white;
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,0)), color-stop(25%, rgba(255,255,255,0.9)), color-stop(75%, rgba(255,255,255,0.9)), color-stop(100%, rgba(255,255,255,0)));
-    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);
-    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);
-    background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);
-    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);
-    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.9) 75%, rgba(255,255,255,0) 100%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 60px;
+	margin-left: -50%;
+	margin-top: -25px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	font-size: 1.2em;
+	background-color: white;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(25%, rgba(255, 255, 255, 0.9)), color-stop(75%, rgba(255, 255, 255, 0.9)), color-stop(100%, rgba(255, 255, 255, 0)));
+	background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+	background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+	background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+	background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
 }
 
 
@@ -284,44 +297,44 @@ div.DTFC_LeftFootWrapper table,
 div.DTFC_RightHeadWrapper table,
 div.DTFC_RightFootWrapper table,
 table.DTFC_Cloned tr.even {
-    background-color: white;
-    margin-bottom: 0;
+	background-color: white;
+	margin-bottom: 0;
 }
- 
-div.DTFC_RightHeadWrapper table ,
+
+div.DTFC_RightHeadWrapper table,
 div.DTFC_LeftHeadWrapper table {
 	border-bottom: none !important;
-    margin-bottom: 0 !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+	margin-bottom: 0 !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
 }
- 
+
 div.DTFC_RightHeadWrapper table thead tr:last-child th:first-child,
 div.DTFC_RightHeadWrapper table thead tr:last-child td:first-child,
 div.DTFC_LeftHeadWrapper table thead tr:last-child th:first-child,
 div.DTFC_LeftHeadWrapper table thead tr:last-child td:first-child {
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
 }
- 
+
 div.DTFC_RightBodyWrapper table,
 div.DTFC_LeftBodyWrapper table {
-    border-top: none;
-    margin: 0 !important;
+	border-top: none;
+	margin: 0 !important;
 }
- 
+
 div.DTFC_RightBodyWrapper tbody tr:first-child th,
 div.DTFC_RightBodyWrapper tbody tr:first-child td,
 div.DTFC_LeftBodyWrapper tbody tr:first-child th,
 div.DTFC_LeftBodyWrapper tbody tr:first-child td {
-    border-top: none;
+	border-top: none;
 }
- 
+
 div.DTFC_RightFootWrapper table,
 div.DTFC_LeftFootWrapper table {
-    border-top: none;
-    margin-top: 0 !important;
+	border-top: none;
+	margin-top: 0 !important;
 }
 
 
