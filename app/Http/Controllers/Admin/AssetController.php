@@ -3,7 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\AssetModel;
+use App\Models\Admin\ImageModel;
+use App\Models\Admin\LocationModel;
+use App\Models\Admin\ManufaturerModel;
+use App\Models\Admin\SupplierModel;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class AssetController extends Controller
 {
@@ -12,7 +19,11 @@ class AssetController extends Controller
      */
     public function index()
     {
-        return view('Admin.Home.Components.Sidebar.Components.Assets.Asset');
+        $locations = LocationModel::with('department')->get();
+        $manufacturers = ManufaturerModel::all()->toArray();
+        $assets  = AssetModel::with(['modelof_mannuf.manufaturer', 'supplier', 'location.department', 'image'])->get();
+        $suppliers = SupplierModel::all()->toArray();
+        return view('Admin.Home.Components.Contents.Assets.Asset', ['locations' => $locations, 'manufacturers' => $manufacturers, 'suppliers' => $suppliers, 'assets' => $assets]);
     }
 
     /**
@@ -28,7 +39,11 @@ class AssetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->except(['_token', 'file']);
+        $asset = AssetModel::create($input);
+
+
+        return redirect()->back();
     }
 
     /**
@@ -36,7 +51,9 @@ class AssetController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $models = ManufaturerModel::find($id);
+        $models->modelofManuf;
+        return response()->json($models);
     }
 
     /**
@@ -52,7 +69,16 @@ class AssetController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        dd($request->all());
+        if ($request->hasFile('file')) {
+
+            $name = $request->file->getClientOriginalName();
+
+            $request->file->storeAs('public', $name);
+
+            ImageModel::create(['asset_model_id' => $request->input('id'), 'url' => $name]);
+        }
+        return redirect()->back();
     }
 
     /**
@@ -60,6 +86,7 @@ class AssetController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $asset = AssetModel::find($id)->delete();
+        return redirect()->back();
     }
 }

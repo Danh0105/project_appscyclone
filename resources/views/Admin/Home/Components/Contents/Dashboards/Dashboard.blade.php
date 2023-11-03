@@ -25,7 +25,7 @@
 										<i class="mdi mdi-account-convert widget-two-icon"></i>
 										<div class="wigdet-two-content text-white">
 											<p class="text-uppercase font-600 font-secondary text-overflow m-0" title="User Today">User</p>
-											<h2 class="text-white"><span data-plugin="counterup">895</span> <small><i
+											<h2 class="text-white"><span data-plugin="counterup">{{ count($users) }}</span> <small><i
 														class="mdi mdi-arrow-down text-danger"></i></small></h2>
 											<p class="m-0"><b>Last:</b> 1250</p>
 										</div>
@@ -41,7 +41,7 @@
 										<i class="mdi mdi-chart-areaspline widget-two-icon"></i>
 										<div class="wigdet-two-content text-white">
 											<p class="text-uppercase font-600 font-secondary text-overflow m-0" title="Statistics">Items</p>
-											<h2 class="text-white"><span data-plugin="counterup">34578</span> <small><i
+											<h2 class="text-white"><span data-plugin="counterup">{{ count($assets) }}</span> <small><i
 														class="mdi mdi-arrow-up text-success"></i></small></h2>
 											<p class="m-0"><b>Last:</b> 30.4k</p>
 										</div>
@@ -54,8 +54,8 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="user1">
 						<div class="row" style="display: flex;justify-content: right;margin:5px;">
-							<a class="btn btn-primary waves-effect w-md waves-light" type="button"
-								href="{{ route("dashboard.create") }}">View More</a>
+							<a class="btn btn-primary waves-effect w-md waves-light" type="button" href="{{ route("userrole.index") }}">View
+								More</a>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
@@ -68,324 +68,29 @@
 											<table class="table-hover m-0 table table">
 												<thead>
 													<tr>
-														<th></th>
-														<th>ID</i></th>
-														<th>DATE</th>
-														<th>ITEM</th>
-														<th>Location</th>
-														<th>REPORTER</th>
-														<th>STATUS</th>
+														<th>ID</th>
+														<th>NAME</th>
+														<th>EMAIL</th>
+														<th>PHONE</th>
+														<th>LOCATION</th>
+														<th>ROLE</th>
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="/assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>0123456789</td>
-														<td>15:36:14 UTC 2016-12-21</td>
-														<td>DELL PC</td>
-														<td>ACCOUNTING DEPARTMENT</td>
-														<td>PHIL COLLIN</td>
-														<td>OPEN</td>
-													</tr>
+													@foreach ($users as $item)
+														<tr>
+															<td>{{ $item["id"] }}</td>
+															<td>{{ $item["name"] }}</td>
+															<td>{{ $item["email"] }}</td>
+															<td>{{ $item["phone"] ?? "No Phone" }}</td>
+															<td>
+																<p>{{ $item["location"]["location_name"] ?? "No Location" }}</p>
+																{{ $item["location"]["department"]["department_name"] ?? "No Department" }}
+															</td>
+															<td> {{ isset($item["role"][0]["name"]) ? $item["role"][0]["name"] : "No Role Assigned" }}
+															</td>
+														</tr>
+													@endforeach
 												</tbody>
 											</table>
 
@@ -398,107 +103,63 @@
 
 						</div>
 					</div>
-					<div class="tab-pane active" id="item1">
+					<div class="tab-pane" id="item1">
 						<div class="row" style="display: flex;justify-content: right;margin:5px;">
 							<a class="btn btn-primary waves-effect w-md waves-light" type="button" href="{{ route("asset.index") }}">View
 								More</a>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								<div class="panel panel-color panel-info">
-									<div class="panel-heading">
-										<h3 class="panel-title">Recent Items</h3>
-									</div>
-									<div class="panel-body">
-										<div class="table-responsive">
-											<table class="table-hover m-0 table table">
-												<thead>
-													<tr>
-														<th></th>
-														<th>ID</i></th>
-														<th>DATE</th>
-														<th>ITEM</th>
-														<th>Location</th>
-														<th>REPORTER</th>
-														<th>STATUS</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="assets/images/users/avatar-6.jpg" alt="user">
-														</th>
-														<td>
-															<h5 class="m-0">Louis Hansen</h5>
-															<p class="text-muted font-13 m-0"><small>Web designer</small></p>
-														</td>
-														<td>+12 3456 789</td>
-														<td>USA</td>
-														<td>07/08/2016</td>
-													</tr>
-
-													<tr>
-														<th>
-															<span class="avatar-sm-box bg-primary">C</span>
-														</th>
-														<td>
-															<h5 class="m-0">Craig Hause</h5>
-															<p class="text-muted font-13 m-0"><small>Programmer</small></p>
-														</td>
-														<td>+89 345 6789</td>
-														<td>Canada</td>
-														<td>29/07/2016</td>
-													</tr>
-
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="assets/images/users/avatar-7.jpg" alt="user">
-														</th>
-														<td>
-															<h5 class="m-0">Edward Grimes</h5>
-															<p class="text-muted font-13 m-0"><small>Founder</small></p>
-														</td>
-														<td>+12 29856 256</td>
-														<td>Brazil</td>
-														<td>22/07/2016</td>
-													</tr>
-
-													<tr>
-														<th>
-															<span class="avatar-sm-box bg-pink">B</span>
-														</th>
-														<td>
-															<h5 class="m-0">Bret Weaver</h5>
-															<p class="text-muted font-13 m-0"><small>Web designer</small></p>
-														</td>
-														<td>+00 567 890</td>
-														<td>USA</td>
-														<td>20/07/2016</td>
-													</tr>
-
-													<tr>
-														<th>
-															<img class="thumb-sm img-circle" src="assets/images/users/avatar-8.jpg" alt="user">
-														</th>
-														<td>
-															<h5 class="m-0">Mark</h5>
-															<p class="text-muted font-13 m-0"><small>Web design</small></p>
-														</td>
-														<td>+91 123 456</td>
-														<td>India</td>
-														<td>07/07/2016</td>
-													</tr>
-
-												</tbody>
-											</table>
-
-										</div> <!-- table-responsive -->
-									</div> <!-- end panel body -->
-								</div>
-								<!-- end panel -->
+						<div class="panel panel-color panel-info">
+							<div class="panel-heading">
+								<h3 class="panel-title">Recent Users</h3>
 							</div>
-							<!-- end col -->
-
+							<table class="table-hover m-0 table">
+								<thead>
+									<tr>
+										<th>NO.</th>
+										<th>CODE</th>
+										<th>NAME</th>
+										<th>LOCATION</th>
+										<th>CONDITION</th>
+										<th>PURCHASE</th>
+										<th>PRICE</th>
+										<th>NOTES</th>
+									</tr>
+								</thead>
+								<tbody>
+									@foreach ($assets as $item)
+										<tr>
+											<td>{{ $item["id"] }}</td>
+											<td>{{ $item["serial"] }}</td>
+											<td>{{ $item["asset_name"] }}</td>
+											<td>{{ $item["location"]["location_name"] }}</td>
+											<td>
+												@if ($item["condition"] == 1)
+													NON-EXISTENT
+												@elseif ($item["condition"] == 2)
+													VERRY GOOD
+												@elseif ($item["condition"] == 3)
+													GOOD
+												@elseif ($item["condition"] == 4)
+													FAIR
+												@elseif ($item["condition"] == 5)
+													REQUIRES RENEWAL
+												@elseif ($item["condition"] == 6)
+													UNSERVICEABLE
+												@endif
+											</td>
+											<td>
+												Date:{{ $item["date"] }} <br>
+												Warranty:{{ $item["warranty"] }} <br>
+												Model:{{ $item["modelof_manuf_id"] }} <br>
+												Serial:{{ $item["serial"] }} <br>
+												Vender:{{ $item["supplier"]["supplier_name"] }}
+											</td>
+											<td>{{ $item["price"] }}</td>
+											<td>{{ $item["note"] }}</td>
+										</tr>
+									@endforeach
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>

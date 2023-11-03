@@ -68,6 +68,7 @@ class UserRoleController extends Controller
                 $role->givePermissionTo($permission);
             }
         }
+
         return response()->json($role);
     }
 
@@ -96,7 +97,6 @@ class UserRoleController extends Controller
 
     {
         /* return response($request->input('permission')); */
-
 
         $validator = Validator::make($request->all(), [
             'rolename' => 'required',

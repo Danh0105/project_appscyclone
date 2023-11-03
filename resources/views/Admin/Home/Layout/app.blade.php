@@ -33,7 +33,6 @@
 								<![endif]-->
 		@yield("header")
 		<script src="/assets/js/modernizr.min.js"></script>
-
 	</head>
 
 	<body class="fixed-left">
@@ -297,7 +296,6 @@
 				<!-- Start content -->
 				<div class="content">
 					<div class="container">
-
 						@yield("content")
 
 					</div> <!-- container -->

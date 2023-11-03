@@ -3,6 +3,7 @@
 use App\Helpers\AdminHelper;
 use App\Http\Controllers\AuthController;
 use App\Mail\MailVerification;
+use App\Models\Admin\AssetModel;
 use App\Models\Admin\LocationModel;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -40,6 +41,22 @@ Route::get('/permission', function () {
     $permission = Permission::create(['name' => 'CREATE']);
     $permission = Permission::create(['name' => 'EDIT']);
     $permission = Permission::create(['name' => 'DELETE']); */
-    $user = User::with(['role', 'location.department'])->get();
-    return response()->json($user);
+    /*      $user = AssetModel::with(['modelof_mannuf.manufaturer', 'supplier', 'location'])->get();*/
+    /*     Permission::create(['name' => 'create-location']);
+    Permission::create(['name' => 'create-role']);
+    Permission::create(['name' => 'create-asset']);
+
+    Permission::create(['name' => 'edit-location']);
+    Permission::create(['name' => 'edit-role']);
+    Permission::create(['name' => 'edit-asset']);
+
+    Permission::create(['name' => 'view-location']);
+    Permission::create(['name' => 'view-role']);
+    Permission::create(['name' => 'view-asset']);
+
+    Permission::create(['name' => 'delete-location']);
+    Permission::create(['name' => 'delete-role']);
+    Permission::create(['name' => 'delete-asset']); */
+    $assets  = AssetModel::with(['modelof_mannuf.manufaturer', 'supplier', 'location.department', 'image'])->get();
+    return response()->json($assets);
 });

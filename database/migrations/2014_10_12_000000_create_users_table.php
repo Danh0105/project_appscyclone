@@ -16,11 +16,11 @@ return new class extends Migration
             $table->id();
             $table->string('phone')->nullable();
             $table->string('name');
-            $table->string('company');
+            $table->string('company')->nullable();
             $table->foreignIdFor(LocationModel::class)->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

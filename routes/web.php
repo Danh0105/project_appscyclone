@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\LocationsController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\AdminUserRoleCreate;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +28,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::resource('departments', DepartmentController::class);
     Route::resource('userrole', UserRoleController::class);
     Route::resource('asset', AssetController::class);
-    Route::post('/UserRoleCreate', AdminUserRoleCreate::class)->name('userrole.createuser');
+    Route::resource('/user', UserController::class);
 });
 Route::get('/', function () {
     return view('Admin.Auth.index');

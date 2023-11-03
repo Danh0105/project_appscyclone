@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\AssetModel;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,7 +14,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('Admin.Home.Components.Contents.Dashboards.Dashboard');
+        $assets  = AssetModel::with(['modelof_mannuf.manufaturer', 'supplier', 'location.department'])->get();
+
+        $users = User::with(['role', 'location.department'])->get()->toArray();
+        return view('Admin.Home.Components.Contents.Dashboards.Dashboard', ['users' => $users, 'assets' => $assets]);
     }
 
     /**

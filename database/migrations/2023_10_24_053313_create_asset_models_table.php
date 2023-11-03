@@ -18,11 +18,12 @@ return new class extends Migration
         Schema::create('asset_models', function (Blueprint $table) {
             $table->id();
             $table->string('asset_name');
-            $table->foreignIdFor(CategoryModel::class);
+            $table->string('category');
             $table->string('condition');
             $table->text('note');
-            $table->date('date');
+            $table->string('date');
             $table->string('serial');
+            $table->integer('price');
             $table->foreignIdFor(ModelofManuf::class);
             $table->foreignIdFor(SupplierModel::class);
             $table->foreignIdFor(LocationModel::class);
